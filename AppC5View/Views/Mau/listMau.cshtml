@@ -1,0 +1,57 @@
+﻿@model IEnumerable<BanGiayTheThao.Models.Mau>
+
+@{
+    ViewData["Title"] = "listMau";
+}
+
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>NSX</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<h1>listMau</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdMau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaMau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenMau)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdMau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaMau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenMau)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Sua", new { id = item.IdMau}) |
+                    @Html.ActionLink("Details", "Details", new { id = item.IdMau }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.IdMau })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

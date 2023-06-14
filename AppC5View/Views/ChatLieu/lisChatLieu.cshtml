@@ -1,0 +1,58 @@
+﻿@model IEnumerable<BanGiayTheThao.Models.ChatLieu>
+
+@{
+    ViewData["Title"] = "lisChatLieu";
+}
+
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Chất Liệu</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<p>
+    <a asp-action="Create">Them</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdChatLieu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaChatLieu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenChatLieu)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdChatLieu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaChatLieu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenChatLieu)
+            </td>
+            <td>
+                    <a  class="primary-btn">@Html.ActionLink("Edit", "Sua", new { id = item.IdChatLieu })</a>
+                    <a  class="primary-btn">@Html.ActionLink("Details", "Details", new { id = item.IdChatLieu })</a>
+                    <a  class="primary-btn">@Html.ActionLink("Delete", "Delete", new { id = item.IdChatLieu })</a>
+                
+                
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

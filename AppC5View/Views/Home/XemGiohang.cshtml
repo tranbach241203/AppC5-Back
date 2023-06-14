@@ -1,0 +1,126 @@
+﻿@model AppC5API.ViewModel.XemGiohangView2
+@{
+    ViewData["Title"] = "XemGiohang";
+}
+<!-- Start Banner Area -->
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Shopping Cart</h1>
+                <nav class="d-flex align-items-center">
+                    <a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="category.html">Cart</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Banner Area -->
+<!--================Cart Area =================-->
+<section class="cart_area">
+    <div class="container">
+        <div class="cart_inner">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Sản Phẩm</th>
+                            <th scope="col">Size</th>
+                            <th scope="col">Số lượng</th>
+                            <th style="width: 150px" scope="col">Giá tiền</th>
+                            <th style="width: 150px" scope="col"></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var item in Model.GioHangChiTiets)
+                    {
+                        <tr>
+                            <td>
+                                <div class="media">
+                                    <div class="d-flex" >
+                                        @if (System.IO.Path.GetExtension(item.PhanLoaiSp.SanPham.AnhDaidien) == ".jpg" ||
+                                           System.IO.Path.GetExtension(item.PhanLoaiSp.SanPham.AnhDaidien) == ".png" ||
+                                           System.IO.Path.GetExtension(item.PhanLoaiSp.SanPham.AnhDaidien) == ".jpeg" ||
+                                           System.IO.Path.GetExtension(item.PhanLoaiSp.SanPham.AnhDaidien) == ".tiff" ||
+                                           System.IO.Path.GetExtension(item.PhanLoaiSp.SanPham.AnhDaidien) == ".webp" ||
+                                           System.IO.Path.GetExtension(item.PhanLoaiSp.SanPham.AnhDaidien) == ".gif")
+                                        {
+                                                <img src="~/anhluutru/@item.PhanLoaiSp.SanPham.AnhDaidien"style="height: 100px">
+                                        }
+                                        else
+                                        {
+                                            <span>Ảnh lỗi rồi =)))</span>
+                                        }
+                                    </div>
+                                    <div class="media-body">
+                                        <h5>@item.PhanLoaiSp.SanPham.TenSanPham</h5>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <h5>@item.PhanLoaiSp.Size.SoSize.Value</h5>
+                            </td>
+                            <td>
+                                <div class="product_count">@item.SoLuong
+                                </div>
+                            </td >
+                            <td >
+                                <div class="media-body">
+                                    <h5>@item.PhanLoaiSp.SanPham.GiaBan Đ</h5>
+                                </div>
+                            </td>
+                            <td><button >@Html.ActionLink("Xoá", "XoaGH", new { id = item.IdGioHangCT })</button></td>
+                        </tr>
+                    }
+                    
+                    <tr class="bottom_button">
+                        <td>
+                            <a class="gray_btn" href="#">Update Cart</a>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            <div class="cupon_text d-flex align-items-center">
+                                <input type="text" placeholder="Coupon Code">
+                                <a class="primary-btn" href="#">Apply</a>
+                                <a class="gray_btn" href="#">Close Coupon</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            <h5>Tổng Tiền</h5>
+                        </td>
+                        <td>
+                            <h5>@Model.tong Đ</h5>
+                        </td>
+                    </tr>
+                    <tr class="out_button_area">
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            <div class="checkout_btn_inner d-flex align-items-center">
+                                    <button class="gray_btn"><a style="color: black">@Html.ActionLink("Tiếp tục Mua", "loatlaisanpham", new { })</a></button>
+                                    <button class="primary-btn"><a style="color: white">@Html.ActionLink("Chốt Đơn", "FormThanhToan", new { })</a></button>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Cart Area =================-->

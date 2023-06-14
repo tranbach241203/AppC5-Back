@@ -1,0 +1,84 @@
+﻿@model IEnumerable<BanGiayTheThao.Models.Anh>
+
+@{
+    ViewData["Title"] = "LstAnh";
+}
+
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>anh</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdAnh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdSanPham)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaAnh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenAnh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DuongDanAnh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrangThai)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdAnh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdSanPham)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaAnh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenAnh)
+            </td>
+            <td>
+                @if (System.IO.Path.GetExtension(item.DuongDanAnh) == ".jpg" ||
+                         System.IO.Path.GetExtension(item.DuongDanAnh) == ".png" ||
+                         System.IO.Path.GetExtension(item.DuongDanAnh) == ".jpeg" ||
+                         System.IO.Path.GetExtension(item.DuongDanAnh) == ".tiff" ||
+                         System.IO.Path.GetExtension(item.DuongDanAnh) == ".webp" ||
+                         System.IO.Path.GetExtension(item.DuongDanAnh) == ".gif")
+                    {
+                        <img src="~/anhluutru/@item.DuongDanAnh" height="100">
+                    }
+                    else
+                    {
+                        <span>Ảnh lỗi rồi =)))</span>                       
+                    }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrangThai)
+            </td>
+            <td>
+                    @Html.ActionLink("Edit", "Edit2", new { id=item.IdAnh }) |
+                    @Html.ActionLink("Details", "Details", new {id=item.IdAnh  }) |
+                    @Html.ActionLink("Delete", "Delete", new {id=item.IdAnh  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

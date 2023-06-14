@@ -1,0 +1,51 @@
+﻿@model AppC5API.ViewModel.XemGiohangView2
+@{
+    ViewData["Title"] = "FormThanhToan";
+}
+
+<!-- Start Banner Area -->
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Checkout</h1>
+                <nav class="d-flex align-items-center">
+                    <a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="single-product.html">Checkout</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Banner Area -->
+<!--================Checkout Area =================-->
+<section class="checkout_area section_gap">
+    <div class="container">
+        <div class="returning_customer">
+            <div class="check_title">
+            </div>
+                <div class="col-lg-4">
+                    <div class="order_box">
+                        <h2>Your Order</h2>
+                    <form asp-controller="Home" asp-action="thanhToan">
+                        <ul class="list">
+                            <li><a href="#">Sản phảm <span>Giá</span></a></li>
+                        @foreach (var item in Model.GioHangChiTiets)
+                        {
+                                <li><a href="#">@item.PhanLoaiSp.SanPham.TenSanPham | <b>size:@item.PhanLoaiSp.Size.SoSize</b> <span><b>@item.SoLuong</b></span> <span class="last">@item.PhanLoaiSp.SanPham.GiaBan Đ x</span></a></li>
+                        }
+                        </ul>
+                        <ul class="list list_2">
+                            @*<li><a href="#">Subtotal <span>$2160.00</span></a></li>
+                            <li><a href="#">Shipping <span>Flat rate: $50.00</span></a></li>*@
+                            <li><a href="#">Tổng <span>@Model.tong Đ</span></a></li>
+                        </ul>
+                        <button type="submit" class="primary-btn">Thanh toán</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Checkout Area =================-->

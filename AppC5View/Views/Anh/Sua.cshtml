@@ -1,0 +1,55 @@
+﻿@model BanGiayTheThao.Models.Anh
+
+@{
+    ViewData["Title"] = "Sua";
+}
+
+<h1>Sua</h1>
+
+<h4>Anh</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Sua">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdAnh" class="control-label"></label>
+                <input asp-for="IdAnh" class="form-control" />
+                <span asp-validation-for="IdAnh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdSanPham" class="control-label"></label>
+                <input asp-for="IdSanPham" class="form-control" />
+                <span asp-validation-for="IdSanPham" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaAnh" class="control-label"></label>
+                <input asp-for="MaAnh" class="form-control" />
+                <span asp-validation-for="MaAnh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TenAnh" class="control-label"></label>
+                <input asp-for="TenAnh" class="form-control" />
+                <span asp-validation-for="TenAnh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DuongDanAnh" class="control-label"></label>
+                <input asp-for="DuongDanAnh" class="form-control" />
+                <span asp-validation-for="DuongDanAnh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrangThai" class="control-label"></label>
+                <input asp-for="TrangThai" class="form-control" />
+                <span asp-validation-for="TrangThai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

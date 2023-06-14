@@ -1,0 +1,41 @@
+﻿@model BanGiayTheThao.Models.ChucVu
+
+@{
+    ViewData["Title"] = "Sua";
+}
+
+<h1>Sua</h1>
+
+<h4>ChucVu</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Sua">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdChucVu" class="control-label"></label>
+                <input asp-for="IdChucVu" class="form-control" />
+                <span asp-validation-for="IdChucVu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TenCV" class="control-label"></label>
+                <input asp-for="TenCV" class="form-control" />
+                <span asp-validation-for="TenCV" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrangThai" class="control-label"></label>
+                <input asp-for="TrangThai" class="form-control" />
+                <span asp-validation-for="TrangThai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+

@@ -1,0 +1,102 @@
+﻿@model IEnumerable<BanGiayTheThao.Models.SanPham>
+
+@{
+    ViewData["Title"] = "listSp";
+}
+
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Sản Phẩm</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<p>
+    <a asp-action="CreateSp">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdSanPham)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaSanPham)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenSanPham)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GiaBan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GiaNhap)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChieuCaoDeGiay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoTa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnhDaidien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrangThai)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdSanPham)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaSanPham)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSanPham)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaBan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaNhap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChieuCaoDeGiay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoTa)
+            </td>
+            <td>
+                    @if (System.IO.Path.GetExtension(item.AnhDaidien) == ".jpg" ||
+                   System.IO.Path.GetExtension(item.AnhDaidien) == ".png" ||
+                   System.IO.Path.GetExtension(item.AnhDaidien) == ".jpeg" ||
+                   System.IO.Path.GetExtension(item.AnhDaidien) == ".tiff" ||
+                   System.IO.Path.GetExtension(item.AnhDaidien) == ".webp" ||
+                   System.IO.Path.GetExtension(item.AnhDaidien) == ".gif")
+                {
+                        <img src="~/anhluutru/@item.AnhDaidien" height="100">
+                }
+                else
+                {
+                    <span>Ảnh lỗi rồi =)))</span>                       
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrangThai)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Sua", new {  id=item.IdSanPham  }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.IdSanPham }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.IdSanPham})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

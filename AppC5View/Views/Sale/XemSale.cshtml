@@ -1,0 +1,203 @@
+﻿@model AppC5API.ViewModels.SaleView
+
+@{
+    ViewData["Title"] = "XemSale";
+}
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Xem Sale</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<h1>XemSale</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            <a>
+                IdSanPham
+            </a>
+        </th>
+        <th>
+            <a>
+                MaSanPham 
+            </a>
+        </th>
+        <th>
+            <a>
+                TenSanPham
+            </a>
+        </th>
+        <th>
+            <a>
+                GiaBan
+            </a>
+        </th>
+        <th>
+            <a>
+                GiaNhap
+            </a>
+        </th>
+        <th>
+            <a>
+                ChieuCaoDeGiay
+            </a>
+        </th>
+        <th>
+            <a>
+                Mota
+            </a>
+        </th>
+        <th>
+            <a>
+                ÀnhDaiDien
+            </a>
+        </th>
+        <th>
+            <a>
+                TrangThai
+            </a>
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.sanPhams) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdSanPham)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaSanPham)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSanPham)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaBan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaNhap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChieuCaoDeGiay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoTa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnhDaidien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrangThai)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+    </tbody>
+</table>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            <a>
+                IdKhuyenMai
+            </a>
+        </th>
+        <th>
+            <a>
+                MaKhuyenMai
+            </a>
+        </th>
+        <th>
+            <a>
+                NgayBatDau
+            </a>
+        </th>
+        <th>
+            <a>
+                NgayKetThuc
+            </a>
+        </th>
+        <th>
+            <a>
+                SoTienGiam
+            </a>
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model .khuyenMai) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdKhuyenMai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaKhuyenMai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayBatDau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayKetThuc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoTienGiam)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {id = item.IdKhuyenMai }) |
+                @Html.ActionLink("chitiet", "Details", new {id = item.IdKhuyenMai }) |
+                @Html.ActionLink("Delete", "Delete", new {id = item.IdKhuyenMai })
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+                <a>
+                    IdSanPham
+                </a>
+        </th>
+        <th>
+            <a>
+                IdKhuyenMai
+            </a>
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item2 in Model .KmSanPhams) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item2.idSanPham)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item2.idKhuyenMai)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item2.IDKMSP }) |
+                @Html.ActionLink("Details", "Details", new {id = item2.IDKMSP }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item2.IDKMSP })
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+

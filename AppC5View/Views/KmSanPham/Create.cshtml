@@ -1,0 +1,37 @@
+﻿@model BanGiayTheThao.Models.KmSanPham
+
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Khuyến mãi sản phẩm</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+	        <div class="form-group">
+                <label asp-for="idSanPham" class="control-label"></label>
+                <input asp-for="idSanPham" class="form-control" />
+                <span asp-validation-for="idSanPham" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="idKhuyenMai" class="control-label"></label>
+                <input asp-for="idKhuyenMai" class="form-control" />
+                <span asp-validation-for="idKhuyenMai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

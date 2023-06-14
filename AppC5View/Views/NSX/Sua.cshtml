@@ -1,0 +1,53 @@
+﻿@model BanGiayTheThao.Models.NSX
+
+@{
+    ViewData["Title"] = "Sua";
+}
+
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>NSX</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<h4>NSX</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Sua">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdNSX" class="control-label"></label>
+                <input asp-for="IdNSX" class="form-control" />
+                <span asp-validation-for="IdNSX" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaNSX" class="control-label"></label>
+                <input asp-for="MaNSX" class="form-control" />
+                <span asp-validation-for="MaNSX" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TenNSX" class="control-label"></label>
+                <input asp-for="TenNSX" class="form-control" />
+                <span asp-validation-for="TenNSX" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrangThai" class="control-label"></label>
+                <input asp-for="TrangThai" class="form-control" />
+                <span asp-validation-for="TrangThai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

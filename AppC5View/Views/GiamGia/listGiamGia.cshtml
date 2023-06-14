@@ -1,0 +1,63 @@
+﻿@model IEnumerable<BanGiayTheThao.Models.GiamGia>
+
+@{
+    ViewData["Title"] = "listGiamGia";
+}
+
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>NSX</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<h1>listGiamGia</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdGiamGia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaGiamGia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoTienDaGiam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenGiamGia)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdGiamGia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaGiamGia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoTienDaGiam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenGiamGia)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Sua", new { id= item.IdGiamGia }) |
+                @Html.ActionLink("Details", "Details", new { id= item.IdGiamGia }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdGiamGia })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

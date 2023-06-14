@@ -1,0 +1,75 @@
+﻿@model BanGiayTheThao.Models.Anh
+
+@{
+    ViewData["Title"] = "Details";
+}
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>anh</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div>
+    <h4>Anh</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdAnh)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdAnh)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdSanPham)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdSanPham)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MaAnh)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MaAnh)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TenAnh)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TenAnh)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DuongDanAnh)
+        </dt>
+        <dd class = "col-sm-10">
+            <td height="100" width="200">
+                
+                @if (System.IO.Path.GetExtension(Model.DuongDanAnh) == ".jpg" ||
+                System.IO.Path.GetExtension(Model.DuongDanAnh) == ".png" ||
+                System.IO.Path.GetExtension(Model.DuongDanAnh) == ".jpeg" ||
+                System.IO.Path.GetExtension(Model.DuongDanAnh) == ".tiff" ||
+                System.IO.Path.GetExtension(Model.DuongDanAnh) == ".gif")
+                {
+                    <img src="~/anhluutru/@Model.DuongDanAnh" height="100">
+                }
+                else
+                {
+                    <span>Ảnh lỗi rồi =)))</span>                       
+                }
+            </td>
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TrangThai)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TrangThai)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

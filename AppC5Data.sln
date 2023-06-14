@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppC5Data", "AppC5Data\AppC5Data.csproj", "{ED4BCF83-27BC-49DF-978C-100CB79539DA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppC5API", "AppC5API\AppC5API.csproj", "{CCD2DADC-F591-4764-812D-934642BB9115}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppC5View", "AppC5View\AppC5View.csproj", "{B8A7B20D-8084-448A-BB54-30958CDCC1AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED4BCF83-27BC-49DF-978C-100CB79539DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED4BCF83-27BC-49DF-978C-100CB79539DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED4BCF83-27BC-49DF-978C-100CB79539DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED4BCF83-27BC-49DF-978C-100CB79539DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCD2DADC-F591-4764-812D-934642BB9115}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCD2DADC-F591-4764-812D-934642BB9115}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCD2DADC-F591-4764-812D-934642BB9115}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCD2DADC-F591-4764-812D-934642BB9115}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8A7B20D-8084-448A-BB54-30958CDCC1AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8A7B20D-8084-448A-BB54-30958CDCC1AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8A7B20D-8084-448A-BB54-30958CDCC1AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8A7B20D-8084-448A-BB54-30958CDCC1AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA1A4345-EAC5-4392-917F-9442B5605C74}
+	EndGlobalSection
+EndGlobal

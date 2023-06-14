@@ -1,0 +1,67 @@
+﻿@model IEnumerable<BanGiayTheThao.Models.HoaDonChiTiet>
+
+@{
+    ViewData["Title"] = "LstCTHoaDon";
+}
+
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Chi Tiết Hóa Đơn</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdHoaDonChiTiet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IDhoaDon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdPhanLoaiSP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoLuong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GiaTien)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdHoaDonChiTiet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDhoaDon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPhanLoaiSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaTien)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
